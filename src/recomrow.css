@@ -1,0 +1,129 @@
+.recomrow{
+    margin-top: 12vh;
+    margin-left: 12vw;
+    z-index: 1;
+    margin-bottom: 2vh;
+    background-color: rgb(0, 0, 0,0.7);
+    /* overflow-x: scroll; */
+    padding: 10px;
+  }
+
+  .recomheading{
+    background-color: rgba(0, 255, 0, 0.719);
+    border-radius: 25px;
+    font-size: 2.5vw;
+    display: inline;
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px rgb(255 110 110 / 10%);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    position: relative;
+    top: 2vh;
+    margin-bottom: 3vh;
+    /* margin-left: 10px; ; */
+  }
+  .recomheading::-webkit-scrollbar{
+    display: none;
+  }
+  .recomrow_posters {
+    max-width: 100%;
+    display: flex;
+    margin-bottom: 5vh;
+    margin-left :5px;
+    overflow-x: scroll;
+  }
+
+.recom_row{
+    width: 27vw;
+    /* margin: 10px; */
+    /* height: 20vh; */
+    object-fit: contain;
+}
+.recommovie {
+    margin-top: 3.5vw;
+    margin-right: 1.1vw;
+    margin-left: 1.1vw;
+    /* margin-bottom: 6vh; */
+    position: relative;
+    object-fit: contain;
+    width: 28vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    transition: transform 450ms;
+  }
+  .recommovie a{
+    text-decoration: none;
+  }
+  .recomrating {
+    display: flex;
+    width: 100%;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    /* height: 15vh; */
+  }
+  .recominfo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+  }
+  .recomtitle{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    margin:3px;
+    padding:5px;
+    font-size: 1.2vw ;
+    border-radius: 10px;
+    height: 40%;
+  }
+  .recomgenres{
+    display: flex;
+    flex-wrap: wrap;
+    margin:2px;
+    font-size: 0.7vw;
+  }
+  .recomgenre{
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 251, 0);
+    color: blue;
+    margin:1px;
+    padding:4px;
+    border-radius: 10px;
+  }
+  
+  .recommov-rate {
+    color: rgb(167, 255, 2);
+    background-color: rgb(153, 0, 255);
+    border-radius: 20px;
+    object-fit: contain;
+    font-size: 1.5vw;
+    font-weight: bolder;
+    padding: 0.3vw;
+    margin-right: 1px; ;
+    position: relative;
+    width:4vw;
+    display: flex;
+    justify-content: center;
+    max-height: 4vh;
+  }
+  
+  .recomrow__poster {
+    width: 17vw;
+    object-fit: contain;
+    transition: transform 450ms;
+  }
+  .recomrow__poster:hover {
+    opacity: 0.7;
+  }
+  .recommovie:hover .rating {
+    transform:scale(1.0);
+  }
+  .recommovie:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }

@@ -1,0 +1,204 @@
+.moviePage{
+    /* height: 100%; */
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    object-fit: contain;
+    color:brown;
+}
+.backImage{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.movPage-body{
+    position: relative;
+    top: 18vh;
+    left: 5vw;
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.mov-top{
+    display: flex;
+}
+.mov-poster{
+    width: 25vw;
+    height: 72vh;
+    z-index: 1;
+}
+.watch_trailer{
+    background-color: black;
+    height: 10vh;
+    width: 25vw;
+    margin-top: -0.7vh;
+    display: flex;
+    justify-content: center;
+    color: blue;
+    align-items: center;
+    font-size: 10px;
+}
+.buttons{
+    background-color: blue;
+    margin: 2px;
+    border-radius: 10px;
+    width: 50%;
+    height: 60%;
+    align-items: center;
+}
+.cl_but{
+    background-color: rgb(255, 136, 0);
+    margin: 2px;
+    border-radius: 10px;
+    width: 50%;
+    height: 60%;
+    align-items: center;
+}
+.mov-card{
+    width: 80vw;
+    height: 82vh;
+    background-color: rgb(0, 0, 0,0.7);
+    position: relative;
+}
+.movInfo{
+    height: 80vh;
+    color: violet;
+}
+.infoTop{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+.mov_name{
+    color: rgb(255, 217, 0);
+    font-size: 6vh ;
+    font-weight: bolder;
+}
+.mov_rating{
+    background-color:black;
+    color: white;
+    font-size: 5vh;
+    padding: 5px;
+    border: 2px solid green;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    max-height: 6vh;
+}
+.infoMid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+.mov_overview{
+    font-size: 3vh;
+}
+.trailer{
+    z-index: 2;
+    position: absolute;
+    /* top: 10vh; */
+    left: 25vw;
+    height: 70vh;
+    width: 80vw;
+}
+.mov_genres{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:2px;
+    font-size: 4vh;
+  }
+  .mov_genre{
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 251, 0);
+    color: blue;
+    padding:4px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  .certi{
+      display: flex;
+      justify-content: center;
+      align-items:center ;
+      max-width:  5vh;
+      height: 5vh;
+      padding: 5px;
+      background-color: rgb(255, 0, 0);
+      border-radius: 50px;
+      font-size: 3vh;
+
+  }
+  .vote_count{
+      font-size: 1.4vw;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+  }
+  .language{
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+.popularity{
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+.infoBottom{
+    position: absolute;
+    bottom: 0vh;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.release_date{
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+.revenue{
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+.budget{
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+.duration{
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+.bottom_Page{
+    left: 10vw;
+    /* display: flex; */
+}
+.actor{
+    background-color: rgb(0, 0, 0,0.7);
+    overflow-y:scroll;
+    width: 100%;
+}
+.recommended{
+    /* background-color: rgba(255, 255, 255); */
+    overflow-y:scroll;
+    margin-left: -25vh;
+    /* width: 40%; */
+    /* position: fixed; */
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+}
