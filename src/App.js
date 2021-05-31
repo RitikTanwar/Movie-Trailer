@@ -52,18 +52,18 @@ function App() {
   //   });
   // }, []);
   return (
-    <Router >
-      <div className="App">
+    <div className="App">
         {/* {user === null ? <Login /> : */}
         {/* <div > */}
         {/* <Route path="/"> */}
-        <Navbar />
+        <Router >
+          <Navbar />
+        </Router>
         <Home />
         {/* </Route> */}
         {/* </div> */}
         {/* } */}
       </div>
-    </Router>
   );
 }
 export default App;

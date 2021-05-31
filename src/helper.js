@@ -53,3 +53,48 @@
       </Link>
       {/* </a> */}
 </div>
+
+    // dispatch({
+    //     type: 'GET_TITLE',
+    //     title: movie?.title || movie?.name
+    // })
+    // dispatch({
+    //     type: 'GET_BACKDROP',
+    //     backdrop: movie.backdrop_path
+    // })
+    // dispatch({
+    //     type: 'GET_GENRE',
+    //     genre: movie.genre_ids
+    // })
+    // dispatch({
+    //     type: 'IS_ADULT',
+    //     adult: movie.adult
+    // })
+    // dispatch({
+    //     type: 'GET_LANGUAGE',
+    //     language: movie.original_language
+    // })
+    // dispatch({
+    //     type: 'GET_OVERVIEW',
+    //     overview: movie.overview
+    // })
+    // dispatch({
+    //     type: 'GET_POPULARITY',
+    //     popularity: movie.popularity
+    // })
+    // dispatch({
+    //     type: 'GET_POSTER',
+    //     poster: movie.poster_path
+    // })
+    // dispatch({
+    //     type: 'GET_RELEASE DATE',
+    //     release_date: movie.release_date
+    // })
+    // dispatch({
+    //     type: 'GET_RATING',
+    //     rating: movie.vote_average
+    // })
+    // dispatch({
+    //     type: 'GET_COUNT',
+    //     count: movie.vote_count
+    // })

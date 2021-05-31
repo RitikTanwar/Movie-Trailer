@@ -16,6 +16,7 @@ import MoneyIcon from '@material-ui/icons/Money';
 import TimerIcon from '@material-ui/icons/Timer';
 import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
 import numeral from 'numeral';
+import ScrollToTop from "react-scroll-to-top";
 
 function Movie({ movid, movtitle, backdrop_path, genre, adult, language, overview, popularity, poster, release_date, rating, count }) {
     // function Movie() {
@@ -23,23 +24,26 @@ function Movie({ movid, movtitle, backdrop_path, genre, adult, language, overvie
     const { id } = useParams();
     const [movie, setMovie] = useState({});
     const [trailerUrl, setTrailerUrl] = useState('')
-    const [query, setQuery] = useState(movid);
+    // const [query, setQuery] = useState(id);
 
-    const search_api = `/movie/${query}?api_key=209b128cb703f61871ecb67c424d54c1&language=en-US`
     const history = useHistory()
     useEffect(() => {
-        if (id != null) setQuery(id);
+        // console.log(movid+' '+id);
+        // if (id != null) setQuery(id);
+        window.scrollTo(0,0);
+        const search_api = `/movie/${id}?api_key=209b128cb703f61871ecb67c424d54c1&language=en-US`
         history.push(`/movie/${id}`)
         async function fetchData() {
             const request = await axios.get(search_api);
             setMovie(request.data);
+            console.log(movie.id);
             return request;
         }
         fetchData();
     }, [id]);
     const opts = {
         height: "470",
-        width: "80%",
+        width: "83%",
         playerVars: {
             autoplay: 1
         }
@@ -64,12 +68,16 @@ function Movie({ movid, movtitle, backdrop_path, genre, adult, language, overvie
             // style={{ background: `url(${base_url + movie.backdrop_path})`, width: 1600, height: 960 }}
             style={{ backgroundColor: "black" }}
         >
-            <img className="backImage" src={base_url + movie.backdrop_path} />
+            <ScrollToTop smooth />
+            <img className="backImage" src={window.innerWidth>1000 ?base_url + movie.backdrop_path:base_url+ movie.poster_path} />
+            {/* <img className="backImage" src={base_url + movie.backdrop_path} /> */}
             <div >
                 <div className="movPage-body" >
                     <div className="mov-top">
                         <div className="movPoster">
-                            <img className="mov-poster" src={base_url + movie.poster_path} alt={movie.title + 'poster'} />
+                            {console.log(window.innerWidth)}
+                            <img className="mov-poster" src={window.outerWidth>1000 ? base_url + movie.poster_path: base_url+ movie.backdrop_path} />
+                            {/* <img className="mov-poster" src={base_url + movie.poster_path} /> */}
                             <div className="watch_trailer">
                                 <div className="buttons">
                                     <Button onClick={() => handleClick()} className="watch_but">
@@ -110,27 +118,27 @@ function Movie({ movid, movtitle, backdrop_path, genre, adult, language, overvie
                                         {movie?.adult === false ? "U/A" : "A"}
                                     </div>
                                     <div className="vote_count">
-                                        <ThumbUpIcon /> Total Votes:{movie?.votes_count}
+                                        <ThumbUpIcon /> <b>Total Votes : </b>{movie?.vote_count}
                                     </div>
                                     <div className="language">
-                                        <LanguageIcon />Original Language:{movie?.original_language}
+                                        <LanguageIcon /><b>Original Language : </b>{movie?.original_language}
                                     </div>
                                     <div className="popularity">
-                                        <PollIcon />Popularity:{movie?.popularity}
+                                        <PollIcon /><b>Popularity : </b>{movie?.popularity}
                                     </div>
                                 </div>
                                 <div className="infoBottom">
                                     <div className="release_date">
-                                        <AccessTimeIcon />Release Date:{movie?.release_date}
+                                        <AccessTimeIcon /><b>Release Date : </b>{movie?.release_date}
                                     </div>
                                     <div className="budget">
-                                        <MoneyIcon /> Budget: {movie.budget != 0 ? '$' + numeral(movie.budget).format(0, 0) : 'N/A'}
+                                        <MoneyIcon /> <b>Budget : </b> {movie.budget != 0 ? ' $' + numeral(movie.budget).format(0, 0) : 'N/A'}
                                     </div>
                                     <div className="duration">
-                                        <TimerIcon /> Duraton:{movie.runtime != 0 ? movie.runtime + ' min' : 'N/A'}
+                                        <TimerIcon /><b>Duraton : </b> {movie.runtime != 0 ? movie.runtime + ' min' : 'N/A'}
                                     </div>
                                     <div className="revenue">
-                                        <MonetizationOnOutlinedIcon /> Revenue:{movie.revenue != 0 ? '$' + numeral(movie.revenue).format(0, 0) : 'N/A'}
+                                        <MonetizationOnOutlinedIcon /> <b></b>Revenue:{movie.revenue != 0 ? '$' + numeral(movie.revenue).format(0, 0) : 'N/A'}
                                     </div>
                                 </div>
                             </div>

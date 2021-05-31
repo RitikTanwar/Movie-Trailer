@@ -14,9 +14,19 @@ import Search from './Search'
 import { useStateValue } from './StateProvider';
 import Movie from './Movie'
 
+    // const [{ search_term }, dispatch] = useStateValue();
+//     return (
+        // <div className="Search">
+        //     <Row title={`Search Releated for ${search_term}`} fetchUrl={SEARCH_API + search_term} isLargeRow={true} />
+        // </div>
+//     )
 function Home() {
     const [{ id, search_term }, dispatch] = useStateValue();
+    // console.log(search_term);
     const [movId, setMovId] = useState('');
+    // const []
+    const API_KEY = '209b128cb703f61871ecb67c424d54c1';
+    const SEARCH_API = `/search/movie?api_key=${API_KEY}&query=`
     useEffect(() => {
         setMovId(id);
     }, []);
@@ -24,30 +34,32 @@ function Home() {
         <>
             <div className="homeBody">
                 <div className="rightBody">
-                    {search_term != null ? <Search /> :
+                    {/* {search_term != null ? <Search /> : */}
+                                {search_term != null?
+                                <Row title={`Search Releated for ${search_term}`} fetchUrl={SEARCH_API + search_term} isLargeRow={true} />:
                         <Router>
                             <Switch>
-                                <Route exact path="/topRated">
+                                <Route path="/topRated">
                                     <Typepage title="Top Rated" link='topRated' />
                                 </Route>
-                                <Route exact path="/latest">
+                                <Route path="/latest">
                                     <Typepage title="Latest Movies" link='latest' />
                                 </Route>
-                                <Route exact path="/action">
+                                <Route path="/action">
                                     <Typepage title="Action Movies" link='action' />
                                 </Route>
-                                <Route exact path="/horror">
+                                <Route path="/horror">
                                     <Typepage title="Horror Movies" link='horror' />
                                 </Route>
-                                <Route exact path="/romance">
+                                <Route path="/romance">
                                     <Typepage title="Romance Movies" link='romance' />
                                 </Route>
-                                <Route exact path="/comedy">
+                                <Route path="/comedy">
                                     <Typepage title="Comedy Movies" link='comedy' />
                                 </Route>
-                                <Route exact path="/documentries">
+                                <Route path="/documentries">
                                     <Typepage title="Documentries" link='documentries' />
-                                </Route>
+                                </Route>                                
                                 <Route path={`/movie/:id`}>
                                     {console.log(id)}
                                     <Movie movid={id} />
@@ -62,5 +74,6 @@ function Home() {
             </div>
         </>
     )
+    
 }
 export default Home

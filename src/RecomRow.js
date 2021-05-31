@@ -32,11 +32,6 @@ function RecomRow({ title = "Recommended", fetchUrl }) {
             id: movie.id
         })
     }
-    // const [index, setIndex] = useState(0);
-
-    // const handleSelect = (selectedIndex, e) => {
-    //     setIndex(selectedIndex);
-    // };
     return (
         <div className="recomrow">
             <h2 className="heading">{title}</h2>
@@ -44,14 +39,8 @@ function RecomRow({ title = "Recommended", fetchUrl }) {
                 {movies.map((movie) => (
                     <div key={movie.id} className="recommovie">
                         <Router >
-                            {/* <Router forceRefresh={true}> */}
-                            {/* <a href={`/movie/${movie.id}`}> */}
-                            {/* <Carousel activeIndex={index} onSelect={handleSelect}> */}
                             <Link to={`/movie/${movie.id}`}>
-                                {/* <Carousel.Item> */}
                                 <img onClick={() => { handleClick(movie) }} className="recom_row" src={base_url + movie.backdrop_path} alt={movie.title || movie.name} />
-
-                                {/* <Carousel.Caption> */}
                                 <div className="recomrating">
                                     <div className="recomtitle">{movie?.title || movie?.name}</div>
                                     <div className="recominfo">
@@ -65,11 +54,7 @@ function RecomRow({ title = "Recommended", fetchUrl }) {
                                         </div>
                                     </div>
                                 </div>
-                                {/* </Carousel.Caption> */}
-                                {/* </Carousel.Item> */}
-                                {/* </a> */}
                             </Link>
-                            {/* </Carousel> */}
                         </Router>
                     </div>
                 ))}

@@ -1,5 +1,4 @@
 .moviePage{
-    /* height: 100%; */
     width: 100%;
     background-color: rgb(0, 0, 0);
     object-fit: contain;
@@ -11,6 +10,7 @@
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
+    opacity: 0.5;
 }
 .movPage-body{
     position: relative;
@@ -24,14 +24,15 @@
     display: flex;
 }
 .mov-poster{
-    width: 25vw;
+    /* width: 25vw; */
+    object-fit: contain;
     height: 72vh;
     z-index: 1;
 }
 .watch_trailer{
     background-color: black;
     height: 10vh;
-    width: 25vw;
+    width: 100%;
     margin-top: -0.7vh;
     display: flex;
     justify-content: center;
@@ -41,18 +42,14 @@
 }
 .buttons{
     background-color: blue;
-    margin: 2px;
-    border-radius: 10px;
-    width: 50%;
-    height: 60%;
-    align-items: center;
+    margin: 5px;
+    border-radius: 20px;
 }
 .cl_but{
     background-color: rgb(255, 136, 0);
-    margin: 2px;
-    border-radius: 10px;
-    width: 50%;
-    height: 60%;
+    border-radius: 20px;
+    /* width: 50%; */
+    /* height: 6vh; */
     align-items: center;
 }
 .mov-card{
@@ -110,7 +107,7 @@
     margin:2px;
     font-size: 4vh;
   }
-  .mov_genre{
+.mov_genre{
     display: flex;
     align-items: center;
     background-color: rgb(255, 251, 0);
@@ -119,7 +116,7 @@
     border-radius: 10px;
     margin: 5px;
   }
-  .certi{
+.certi{
       display: flex;
       justify-content: center;
       align-items:center ;
@@ -129,7 +126,6 @@
       background-color: rgb(255, 0, 0);
       border-radius: 50px;
       font-size: 3vh;
-
   }
   .vote_count{
       font-size: 1.4vw;
@@ -196,9 +192,68 @@
 .recommended{
     /* background-color: rgba(255, 255, 255); */
     overflow-y:scroll;
-    margin-left: -25vh;
-    /* width: 40%; */
-    /* position: fixed; */
+    margin-left: -160px;
     overflow-x: scroll;
     flex-wrap: nowrap;
 }
+
+@media (max-width: 1000px) {
+    .mov-poster{
+        width: 90vw;
+        object-fit: contain;
+        display: block;
+        z-index: 1;
+        height: auto;
+    }
+    .mov-top{
+        display: flex;
+        flex-direction: column;
+    }
+    .mov-card{
+        width: 90vw;
+        background-color: rgb(0, 0, 0,0.7);
+        position: relative;
+        font-size: 10px;
+        max-height: 1000px;
+    }
+    .watch_trailer{
+        width: 90vw;
+    }
+    .trailer{
+        z-index: 2;
+        position: absolute;
+        top: 50vh;
+        left: 0vw;
+        height: 10vh;
+        width: 120vw;
+    }
+    .mov_name{
+        font-size: 25px ;
+    }
+    .mov_rating{
+        font-size: 20px;
+    }
+    .mov_overview{
+        font-size: 15px;
+    }
+    .mov_genres{
+        font-size: 18px;
+      }
+    .certi{
+          font-size: 15px;
+          height: 30px;
+    }
+    .vote_count , .language ,.popularity{
+        font-size: 15px;
+    }
+    .infoBottom{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .release_date , .budget , .revenue , .duration{
+        font-size: 13px; ;
+    }
+
+  }
+  

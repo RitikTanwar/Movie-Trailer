@@ -16,7 +16,7 @@
     height: 85vh; 
     width: 12vw; 
     position: absolute;
-    margin-top: 12vh;
+    /* margin-top: 10vh; */
     left: 0;
     padding-top: 20px;
     color: white;
@@ -35,9 +35,7 @@
     color: rgb(255, 255, 255);
     box-shadow: 1px 2px 2px rgb(255, 255, 255);
     padding: 0.5rem 1rem 0.5rem 1rem;
-    position: relative;
-    top: 2vh;
-    margin-bottom: 10vh;
+    margin-bottom: 10px;
   }
   .leftBody a{
     text-decoration:none;

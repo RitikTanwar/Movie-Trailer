@@ -27,7 +27,7 @@ function Actors({ id }) {
                     cast.profile_path != null ?
                         <div key={cast.id} className="cast_post">
                             <img className="cast__poster" src={cast.profile_path != null ? base_url + cast.profile_path : dummy_photo} alt={cast.name} />
-                            <img className="cast__poster" src={base_url + cast.profile_path} alt={cast.name} />
+                            {/* <img className="cast__poster" src={base_url + cast.profile_path} alt={cast.name} /> */}
                             <div className="castInfo">
                                 <h4 className="cast_name">{cast?.name}</h4>
                                 <h4 className="cast_char">{cast?.character}</h4>
